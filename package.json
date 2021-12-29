@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/heryTz/clean-express-app#readme",
   "dependencies": {
-    "body-parse": "^0.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "mysql2": "^2.3.3",
