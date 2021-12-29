@@ -1,7 +1,6 @@
-import { Application } from "express"
+import { Application } from 'express'
 
-export function setupServer (app: Application) {
-
+export function setupServer(app: Application) {
     const port = process.env.NODE_PORT || '3030'
     app.set('port', port)
     app.set('env', process.env.NODE_ENV || 'prod')
@@ -23,12 +22,12 @@ export function setupServer (app: Application) {
     })
 }
 
-function onListening () {
+function onListening() {
     console.log(`Listening ${process.env.NODE_PORT}`)
 }
 
 // Extracted from express generator code
-function onError (error: any) {
+function onError(error: any) {
     if (error.syscall !== 'listen') {
         throw error
     }
@@ -38,14 +37,14 @@ function onError (error: any) {
 
     switch (error.code) {
         case 'EACCES':
-          console.error(`${bind} requires elevated privileges`)
-          process.exit(1)
-          break
+            console.error(`${bind} requires elevated privileges`)
+            process.exit(1)
+            break
         case 'EADDRINUSE':
-          console.error(`${bind} is already in use`)
-          process.exit(1)
-          break
+            console.error(`${bind} is already in use`)
+            process.exit(1)
+            break
         default:
-          throw error
+            throw error
     }
 }
