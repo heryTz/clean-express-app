@@ -2,10 +2,8 @@ import { Application } from 'express'
 
 export function setupServer(app: Application) {
     const port = process.env.NODE_PORT || '3030'
-    app.set('port', port)
-    app.set('env', process.env.NODE_ENV || 'prod')
 
-    const server = app.listen()
+    const server = app.listen(port)
     server.on('listening', onListening)
     server.on('error', onError)
 
