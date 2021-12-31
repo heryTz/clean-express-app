@@ -3,10 +3,10 @@ import dotenv from 'dotenv'
 import { createConnection } from 'typeorm'
 import express, { Application, Request, Response } from 'express'
 import cors from 'cors'
-import { setupServer } from './tools/Server'
+import { setupServer } from './Tools/Server'
 import { InversifyExpressServer } from 'inversify-express-utils'
 import container from './Provider'
-import './controller/Index'
+import './Controller/Index'
 
 dotenv.config()
 
