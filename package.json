@@ -2,7 +2,7 @@
   "name": "clean-express-app",
   "version": "1.0.0",
   "description": "Express starter application",
-  "main": "src/index.ts",
+  "main": "src/Index.ts",
   "scripts": {
     "dev": "nodemon .",
     "build": "npx tsc -p .",
