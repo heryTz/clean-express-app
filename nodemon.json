@@ -6,5 +6,5 @@
     "ignore": [
         "src/**/*.(spec|test).ts"
     ],
-    "exec": "ts-node --transpile-only src/index.ts"
+    "exec": "ts-node --transpile-only src/Index.ts"
 }

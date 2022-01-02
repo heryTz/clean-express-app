@@ -2,12 +2,14 @@
   "name": "clean-express-app",
   "version": "1.0.0",
   "description": "Express starter application",
-  "main": "src/index.ts",
+  "main": "src/Index.ts",
   "scripts": {
     "dev": "nodemon .",
     "build": "npx tsc -p .",
     "format": "prettier --write 'src/**/*.(js|ts)'",
-    "test": ""
+    "lint": "npx eslint src/**/*.ts",
+    "lint:fix": "npx eslint src/**/*.ts --fix",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -38,8 +40,13 @@
     "@types/body-parser": "^1.19.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.0",
     "@types/node": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
     "dotenv": "^10.0.0",
+    "jest": "^27.4.5",
+    "eslint": "^8.5.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1",
     "ts-node": "^10.4.0",
