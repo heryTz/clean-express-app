@@ -1,1 +1,3 @@
-export const TYPES = {}
+export const TYPES = {
+    LoggerService: Symbol.for('LoggerService')
+}
