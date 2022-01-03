@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 import { Container } from 'inversify'
 import { FooService } from './Service/FooService/FooServiceType'
 import { MyFooService } from './Service/FooService/MyFooService'
