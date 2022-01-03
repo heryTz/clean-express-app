@@ -2,7 +2,7 @@ import 'reflect-metadata'
 import { Container } from 'inversify'
 import { FooService } from './Service/FooService/FooServiceType'
 import { MyFooService } from './Service/FooService/MyFooService'
-import { TYPES } from './Service/Index'
+import { TYPES } from './Type'
 
 const container = new Container()
 

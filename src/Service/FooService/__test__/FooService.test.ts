@@ -1,5 +1,5 @@
 import container from '../../../Provider'
-import { TYPES } from '../../Index'
+import { TYPES } from '../../../Type'
 import { FooService } from '../FooServiceType'
 
 const fooService = container.get<FooService>(TYPES.FooService)
