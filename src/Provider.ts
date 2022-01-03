@@ -1,5 +1,5 @@
 import { Container } from 'inversify'
 
-let container = new Container()
+const container = new Container()
 
 export default container
