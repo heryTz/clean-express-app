@@ -37,3 +37,23 @@ You can check these branches for the different base codes that exist
 
 - **master**: The basic architecture
 - **foo-service**: A example how you can implement a service
+
+## Troubleshooting
+
+### 1. Using Typescript entities with **typeorm** cli.
+
+It doesn't work if you directly use the cli typeorm. Use the npm script typeorm that already exists in the package.json.  
+
+Then you may run the command like this:
+
+```bash
+npm run typeorm migration:run
+```
+
+If you need to pass parameter with dash to npm script, you will need to add them after --. For example, if you need to generate, the command is like this:
+
+```bash
+npm run typeorm migration:generate -- -n migrationNameHere
+```
+
+Please refer this documentation for more information (https://typeorm.io/#/using-cli/if-entities-files-are-in-typescript).
