@@ -8,5 +8,7 @@ declare namespace NodeJS {
         DB_USER: string
         DB_PASSWORD: string
         ENABLE_DB_lOGING: string
+        JWT_SECRET: string
+        PASSWORD_SALT: string
     }
 }
