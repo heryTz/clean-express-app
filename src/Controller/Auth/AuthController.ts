@@ -25,6 +25,7 @@ export class AuthController implements Controller {
             const isMatch = this.hasherService.compare(req.body.password, user.password)
             if (!isMatch) return this.httpService.unauthorized(res)
 
+            // TODO: handle refresh token when login
             const userData = (await this.userRepository.findById(user.id)) as User
             return res.json({
                 token: this.userService.generateToken(userData),
