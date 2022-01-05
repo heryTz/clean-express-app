@@ -35,12 +35,12 @@ npm run dev
 
 You can check these branches for the different base codes that exist
 
-- **master**: The basic architecture
-- **foo-service**: A example how you can implement a service
+- **main**: The basic architecture
+- **example/foo-service**: An example how you can implement a service
 
 ## Troubleshooting
 
-### 1. Using Typescript entities with **typeorm** cli.
+### 1. Using Typescript entities with **typeorm** cli
 
 It doesn't work if you directly use the cli typeorm. Use the npm script typeorm that already exists in the package.json.  
 
