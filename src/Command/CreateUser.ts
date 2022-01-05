@@ -30,15 +30,6 @@ import { TYPES } from '../Type'
                         name: 'repassPassword',
                         message: 'Confirm password:'
                     },
-                    {
-                        type: 'select',
-                        name: 'activated',
-                        message: 'You want that this account is activated:',
-                        choices: [
-                            { title: 'Yes', value: true },
-                            { title: 'No', value: false }
-                        ]
-                    }
                 ])
                 if (response.password !== response.repassPassword) {
                     console.warn('The password is not match')
@@ -47,7 +38,7 @@ import { TYPES } from '../Type'
                 const user = new User()
                 user.email = response.email
                 user.password = hasherService.hash(response.password)
-                user.actived = response.activated
+                user.actived = true
                 await userRepo.save(user)
                 console.info('User created successfully!')
             } catch (e) {
