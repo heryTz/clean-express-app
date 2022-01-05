@@ -10,6 +10,6 @@ export class BcryptHasherService implements IHasherService {
     }
 
     hash(text: string) {
-        return bcrypt.hashSync(text)
+        return bcrypt.hashSync(text, process.env.PASSWORD_SALT)
     }
 }
