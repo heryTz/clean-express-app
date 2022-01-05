@@ -36,4 +36,13 @@ export class UserRepository implements IUserRepository {
             throw e
         }
     }
+
+    async save(user: User): Promise<User> {
+        try {
+            return await this.userRepo.save(user)
+        } catch (e) {
+            this.logger.error(e)
+            throw e
+        }
+    }
 }
