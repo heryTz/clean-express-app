@@ -1,4 +1,4 @@
-import { User } from "../../Entity/User";
+import { User } from '../../Entity/User'
 
 export interface IUserService {
     generateToken: (user: User) => string

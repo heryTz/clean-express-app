@@ -1,10 +1,9 @@
-import { Response } from "express";
-import { injectable } from "inversify";
-import { IHttpService } from "./HttpServiceType";
+import { Response } from 'express'
+import { injectable } from 'inversify'
+import { IHttpService } from './HttpServiceType'
 
 @injectable()
 export class SimpleHttpService implements IHttpService {
-
     private isDev = process.env.NODE_ENV === 'dev'
 
     notFound(res: Response, message?: string) {
@@ -42,5 +41,4 @@ export class SimpleHttpService implements IHttpService {
             message: 'Token expired'
         })
     }
-    
 }

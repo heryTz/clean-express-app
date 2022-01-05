@@ -1,9 +1,9 @@
-import { inject, injectable } from "inversify";
-import { getRepository, SelectQueryBuilder } from "typeorm";
-import { User } from "../../Entity/User";
-import { ILoggerService } from "../../Service/Logger/LoggerServiceType";
-import { TYPES } from "../../Type";
-import { IUserRepository } from "./UserRepositoryType";
+import { inject, injectable } from 'inversify'
+import { getRepository, SelectQueryBuilder } from 'typeorm'
+import { User } from '../../Entity/User'
+import { ILoggerService } from '../../Service/Logger/LoggerServiceType'
+import { TYPES } from '../../Type'
+import { IUserRepository } from './UserRepositoryType'
 
 @injectable()
 export class UserRepository implements IUserRepository {
@@ -19,7 +19,7 @@ export class UserRepository implements IUserRepository {
             .addSelect('user.codeActivation')
     }
 
-    async findById(id: any): Promise<User|undefined> {
+    async findById(id: any): Promise<User | undefined> {
         try {
             return await this.userRepo.findOne(id)
         } catch (e) {
@@ -28,7 +28,7 @@ export class UserRepository implements IUserRepository {
         }
     }
 
-    async findCompleteByEmail(email: string): Promise<User|undefined> {
+    async findCompleteByEmail(email: string): Promise<User | undefined> {
         try {
             return await this.findComplete().where('user.email = :email', { email }).getOne()
         } catch (e) {
@@ -36,5 +36,4 @@ export class UserRepository implements IUserRepository {
             throw e
         }
     }
-
 }

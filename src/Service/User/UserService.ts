@@ -1,11 +1,10 @@
-import { injectable } from "inversify";
-import { User } from "../../Entity/User";
-import { IUserService } from "./UserServiceType";
+import { injectable } from 'inversify'
+import { User } from '../../Entity/User'
+import { IUserService } from './UserServiceType'
 import jwt from 'jsonwebtoken'
 
 @injectable()
 export class UserService implements IUserService {
-    
     generateToken(user: User): string {
         return jwt.sign(
             {
@@ -27,5 +26,4 @@ export class UserService implements IUserService {
             { expiresIn: '24h' }
         )
     }
-
 }

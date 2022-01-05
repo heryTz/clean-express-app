@@ -1,11 +1,10 @@
-import { IHasherService } from "./HasherServiceType";
+import { IHasherService } from './HasherServiceType'
 import bcrypt from 'bcryptjs'
-import { injectable } from "inversify";
+import { injectable } from 'inversify'
 
 @injectable()
 export class BcryptHasherService implements IHasherService {
-    
-    compare (text: string, hash: string) {
+    compare(text: string, hash: string) {
         return bcrypt.compareSync(text, hash)
     }
 
