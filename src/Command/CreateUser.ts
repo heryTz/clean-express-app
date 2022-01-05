@@ -1,12 +1,18 @@
-import { hashSync } from "bcryptjs"
 import prompts from "prompts"
 import { createConnection, getRepository } from "typeorm"
 import { User } from "../Entity/User"
+import container from "../Provider"
+import { IHasherService } from "../Service/Hasher/HasherServiceType"
+import { TYPES } from "../Type"
+
 
 (async () => {
+    const hasherService = container.get<IHasherService>(TYPES.HasherService)
+
     createConnection()
     .then(async () => {
         const userRepo = getRepository(User)
+
         try {
             const response = await prompts([
                 {
@@ -41,7 +47,7 @@ import { User } from "../Entity/User"
             }
             const user = new User()
             user.email = response.email
-            user.password = hashSync(response.password)
+            user.password = hasherService.hash(response.password)
             user.actived = response.activated
             await userRepo.save(user)
             console.info('User created successfully!')
