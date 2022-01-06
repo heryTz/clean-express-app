@@ -35,8 +35,9 @@ npm run dev
 
 You can check these branches for the different base codes that exist
 
-- **master**: The basic architecture
-- **foo-service**: A example how you can implement a service
+- **main**: The basic architecture
+- **example/foo-service**: An example how you can implement a service
+- **demo/user**: Simple demo for user management (login, create, ...)
 
 ## Troubleshooting
 
