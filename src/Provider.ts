@@ -11,8 +11,8 @@ import { IUserRepository } from './Repository/User/UserRepositoryType'
 import { UserRepository } from './Repository/User/UserRepository'
 import { IUserService } from './Service/User/UserServiceType'
 import { UserService } from './Service/User/UserService'
-import { IDBExtractorService } from './Service/DBExtractor/DBExtractorService'
-import { MysqlExtractorService } from './Service/DBExtractor/MysqlExtractorServiceType'
+import { IDBExtractorService } from './Service/DBExtractor/DBExtractorServiceType'
+import { MysqlExtractorService } from './Service/DBExtractor/MysqlExtractorService'
 
 const container = new Container()
 

@@ -1,5 +1,5 @@
 import { injectable } from "inversify";
-import { IDBExtractorService } from "./DBExtractorService";
+import { IDBExtractorService } from "./DBExtractorServiceType";
 
 @injectable()
 export class MysqlExtractorService implements IDBExtractorService {
