@@ -1,34 +1,33 @@
 import { Response } from "express";
 import { injectable } from "inversify";
-import { IHttpService } from "./HttpServiceType";
+import { IHttpService, ResponseData } from "./HttpServiceType";
 
 @injectable()
 export class SimpleHttpService implements IHttpService {
 
     private isDev = process.env.NODE_ENV === 'dev'
 
-    notFound(res: Response, message?: string) {
-        return res.status(404).json({
-            message: this.isDev && message ? message : 'Not Found'
-        })
+    responseData(data: ResponseData, defaultMessage?: string): ResponseData {
+        return {
+            message: this.isDev && data.message ? data.message : defaultMessage,
+            log: this.isDev ? data.log : undefined 
+        }
     }
 
-    badRequest(res: Response, message?: string) {
-        return res.status(400).json({
-            message: this.isDev && message ? message : 'Bad request'
-        })
+    notFound(res: Response, data: ResponseData) {
+        return res.status(404).json(this.responseData(data, 'Not Found'))
     }
 
-    errorServer(res: Response, message?: string) {
-        return res.status(500).json({
-            message: this.isDev && message ? message : 'Error server'
-        })
+    badRequest(res: Response, data: ResponseData) {
+        return res.status(400).json(this.responseData(data, 'Bad request'))
     }
 
-    forbidden(res: Response, message?: string) {
-        return res.status(403).json({
-            message: this.isDev && message ? message : 'Forbidden'
-        })
+    errorServer(res: Response, data: ResponseData) {
+        return res.status(500).json(this.responseData(data, 'Error server'))
+    }
+
+    forbidden(res: Response, data: ResponseData) {
+        return res.status(403).json(this.responseData(data, 'Forbidden'))
     }
 
     unauthorized(res: Response) {
