@@ -6,10 +6,10 @@ export interface ResponseData {
 }
 
 export interface IHttpService {
-    notFound: (res: Response, data: ResponseData) => Response
-    badRequest: (res: Response, data: ResponseData) => Response
-    errorServer: (res: Response, data: ResponseData) => Response
-    unauthorized: (res: Response, data: ResponseData) => Response
-    tokenExpired: (res: Response, data: ResponseData) => Response
-    forbidden: (res: Response, data: ResponseData) => Response
+    notFound: (res: Response, data?: ResponseData) => Response
+    badRequest: (res: Response, data?: ResponseData) => Response
+    errorServer: (res: Response, data?: ResponseData) => Response
+    unauthorized: (res: Response, data?: ResponseData) => Response
+    tokenExpired: (res: Response, data?: ResponseData) => Response
+    forbidden: (res: Response, data?: ResponseData) => Response
 }
